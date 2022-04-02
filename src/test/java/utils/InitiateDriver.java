@@ -11,7 +11,7 @@ public class InitiateDriver {
 	
 	public static WebDriver getInstance() {
 		if(driver==null) {
-			System.setProperty("webdriver.chrome.driver","/Users/mmt9178/eclipse-workspace/Personal/UIAutomation/uiautomationpractice/src/test/resources/drivers/chromedriver");
+			System.setProperty("webdriver.chrome.driver","/Users/mmt9178/eclipse-workspace/Personal/UIAutomation/UI-Automation-Practice/src/test/resources/drivers/chromedriver");
 			driver = new ChromeDriver();
 		}
 		return driver;
