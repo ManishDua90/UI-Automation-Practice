@@ -12,21 +12,34 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 	<build>
-		<testSourceDirectory>/Users/mmt9178/eclipse-workspace/Personal/UIAutomation/uiautomationpractice/src/test/java/testrunner</testSourceDirectory>
-	<pluginManagement>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M4</version>
-				<configuration>
-					  <suiteXmlFiles>
-						<suiteXmlFile>testng.xml</suiteXmlFile>
+		<plugins>                    
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.19.1</version>
+                    <inherited>true</inherited>
+                    <executions>
+                        <execution>
+                            <phase>test</phase>
+                            <goals>
+                                <goal>test</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <suiteXmlFiles>
+						<suiteXmlFile>/Users/mmt9178/eclipse-workspace/Personal/UIAutomation/UI-Automation-Practice/testng.xml</suiteXmlFile>
+
 					</suiteXmlFiles>
 				</configuration>
+				
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
 			</plugin>
 		</plugins>
-	</pluginManagement>
 	</build>
 	<dependencies>
 		<dependency>
@@ -39,16 +52,19 @@
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>7.2.3</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-core</artifactId>
 			<version>7.2.3</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-testng</artifactId>
 			<version>7.2.3</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
@@ -73,5 +89,6 @@
 		</dependency>
 
 	</dependencies>
-	
+
+
 </project>
