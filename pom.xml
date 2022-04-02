@@ -11,6 +11,21 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
+	<build>
+		<testSourceDirectory>/Users/mmt9178/eclipse-workspace/Personal/UIAutomation/uiautomationpractice/src/test/java/testrunner</testSourceDirectory>
+		<plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.2</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+</plugins>
+	</build>
 	<dependencies>
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -44,16 +59,17 @@
 			<version>4.1.1</version>
 		</dependency>
 
-<dependency>
-     <groupId>com.aventstack</groupId>
-     <artifactId>extentreports</artifactId>
-     <version>3.1.5</version>
-</dependency>
-<dependency>
-    <groupId>info.cukes</groupId>
-    <artifactId>gherkin</artifactId>
-    <version>2.7.3</version>
-</dependency>
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>3.1.5</version>
+		</dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>gherkin</artifactId>
+			<version>2.7.3</version>
+		</dependency>
 
 	</dependencies>
+	
 </project>
