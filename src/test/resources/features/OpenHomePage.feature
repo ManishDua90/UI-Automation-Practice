@@ -8,4 +8,3 @@ Feature: Open Homepage of automation practice
     Given Driver is initiated
     When Home page is opened
     Then Logo is displayed
-    And Close the page
