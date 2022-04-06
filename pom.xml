@@ -12,27 +12,27 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 	<build>
-		<plugins>                    
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.19.1</version>
-                    <inherited>true</inherited>
-                    <executions>
-                        <execution>
-                            <phase>test</phase>
-                            <goals>
-                                <goal>test</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <suiteXmlFiles>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<inherited>true</inherited>
+				<executions>
+					<execution>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<suiteXmlFiles>
 						<suiteXmlFile>/Users/mmt9178/eclipse-workspace/Personal/UIAutomation/UI-Automation-Practice/testng.xml</suiteXmlFile>
 
 					</suiteXmlFiles>
 				</configuration>
-				
+
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -76,19 +76,12 @@
 			<artifactId>selenium-java</artifactId>
 			<version>4.1.1</version>
 		</dependency>
-
 		<dependency>
-			<groupId>com.aventstack</groupId>
-			<artifactId>extentreports</artifactId>
-			<version>3.1.5</version>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-cucumber6-jvm</artifactId>
+			<version>2.13.6</version>
 		</dependency>
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>gherkin</artifactId>
-			<version>2.7.3</version>
-		</dependency>
-
-	</dependencies>
+</dependencies>
 
 
 </project>

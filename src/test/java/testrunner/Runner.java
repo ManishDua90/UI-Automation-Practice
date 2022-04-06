@@ -1,10 +1,11 @@
 package testrunner;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
 
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import utils.InitiateDriver;
@@ -14,9 +15,11 @@ import utils.InitiateDriver;
         glue = {"stepdefinitions"},
         plugin = {
                 "pretty","html:target/cucumber-reports/cucumber-pretty",
-                "json:target/cucumber-reports/CucumberTestReport.json",
-                "rerun:target/cucumber-reports/rerun.txt"
-        })
+//                "json:target/cucumber-reports/CucumberTestReport.json",
+//                "rerun:target/cucumber-reports/rerun.txt",
+//                "cucumberHooks.customReportListener",
+        		"io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm" }, monochrome = true
+        )
 
 public class Runner extends AbstractTestNGCucumberTests{
 	
@@ -26,5 +29,12 @@ public class Runner extends AbstractTestNGCucumberTests{
 		InitiateDriver.quitDriver();
 	}
 	
+	@AfterStep
+	public void endstep(Scenario scenario) {
+	if (scenario.isFailed()) {
+	byte[] screenshot = ((TakesScreenshot) InitiateDriver.getInstance()).getScreenshotAs(OutputType.BYTES);
+	scenario.attach(screenshot, "image/png", "screenshot");
+	}
+	}
 
 }
