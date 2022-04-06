@@ -32,7 +32,7 @@ public class BuyCloth {
         Assert.assertEquals(true, isDisplayed);
         driver.findElement(By.xpath(BUY_CLOTH_XPATH_START+cloth+BUY_CLOTH_XPATH_END)).click();
        
-        Thread.sleep(4000);
+        Thread.sleep(5000);
         driver.switchTo().frame(1);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(ADD_TO_CART_BUTTON_XAPTH))));
         driver.findElement(By.xpath(ADD_TO_CART_BUTTON_XAPTH)).click();
