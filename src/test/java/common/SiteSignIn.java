@@ -13,6 +13,7 @@ public class SiteSignIn extends SignIn{
 
 	@Override
 	public void signin(String email, String pass) {
+		pageobjects.SignIn.getSignInLinkElement(driver).click();
 		pageobjects.SignIn.getEmailElement(driver).sendKeys(email);
 		pageobjects.SignIn.getPasswordElement(driver).sendKeys(pass);
 		pageobjects.SignIn.getSubmitButtonElement(driver).click();

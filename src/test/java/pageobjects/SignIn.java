@@ -12,6 +12,8 @@ public class SignIn {
 	private static String SUBMIT_BUTTON_XPATH = "//button[@name=\"SubmitLogin\"]";
 	private static final String LOGGED_IN_USERNAME_XPATH_START = "//a//span[contains(text(),\"";
 	private static final String LOGGED_IN_USERNAME_XPATH_END = "\"";
+	private static final String SIGN_IN_LINK_XPATH = "//a[@class=\"login\"]";
+	
 	
 	
 	static WebElement element = null;
@@ -34,6 +36,11 @@ public class SignIn {
 	public static WebElement getLoggedInUsernameElement(WebDriver driver, String username) {
 		String temp = LOGGED_IN_USERNAME_XPATH_START + username + LOGGED_IN_USERNAME_XPATH_END;
 		element = driver.findElement(By.xpath(temp));
+		return element;
+	}
+	
+	public static WebElement getSignInLinkElement(WebDriver driver) {
+		element = FindElement.byXPath(driver, SIGN_IN_LINK_XPATH);
 		return element;
 	}
 }
