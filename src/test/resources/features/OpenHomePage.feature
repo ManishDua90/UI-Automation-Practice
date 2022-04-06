@@ -1,5 +1,5 @@
 
-@tag
+@OpenHomePage
 Feature: Open Homepage of automation practice
   I want to use this template for my feature file
 

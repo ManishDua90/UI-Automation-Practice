@@ -2,8 +2,6 @@ package stepdefinitions;
 
 import org.openqa.selenium.WebDriver;
 
-import com.aventstack.extentreports.ExtentReports;
-
 import constants.Constants;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,7 +10,6 @@ import pageobjects.HomePageObjects;
 import utils.InitiateDriver;
 
 public class OpenHomePage {
-	 ExtentReports extent;
 
 	WebDriver driver = null;
 
