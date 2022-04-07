@@ -11,7 +11,7 @@ public class SignIn {
 	private static String PASSWORD_XPATH = "//input[@id=\"passwd\"]";
 	private static String SUBMIT_BUTTON_XPATH = "//button[@name=\"SubmitLogin\"]";
 	private static final String LOGGED_IN_USERNAME_XPATH_START = "//a//span[contains(text(),\"";
-	private static final String LOGGED_IN_USERNAME_XPATH_END = "\"";
+	private static final String LOGGED_IN_USERNAME_XPATH_END = "\"]";
 	private static final String SIGN_IN_LINK_XPATH = "//a[@class=\"login\"]";
 	
 	
