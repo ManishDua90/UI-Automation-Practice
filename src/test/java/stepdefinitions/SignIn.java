@@ -25,7 +25,7 @@ public class SignIn {
 	}
 	
 	@Then("I am able to see {string} logged in")
-    public void buyCloth(String username) {
+    public void userLoggedIn(String username) {
 		Assert.assertEquals(pageobjects.SignIn.getLoggedInUsernameElement(driver, username).toString(), username);
 	}
 
