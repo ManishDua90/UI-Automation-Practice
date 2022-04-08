@@ -33,7 +33,7 @@ public class SignIn {
 	@Then("I am able to see {string} logged in")
     public void userLoggedIn(String username) {
 		logger.info("Check whether " + username + " is logged in ");
-		Assert.assertEquals(pageobjects.SignIn.getLoggedInUsernameElement(driver, username).toString(), username);
+		Assert.assertEquals(pageobjects.SignIn.getLoggedInUsernameElement(driver, username).getText().toString(), username);
 		logger.info(username + " is logged in ");
 	}
 
