@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -8,19 +9,18 @@ import io.cucumber.java.Scenario;
 import utils.InitiateDriver;
 
 public class ServiceHooks {
+	Logger logger = null;
 	
-	//To capture screenshot in report in case of test failure
+	public ServiceHooks() {
+		logger = Logger.getLogger(ServiceHooks.class);
+	}
+	
 	@After
 	public void captureScreenshot(Scenario scenario) {
 		if(scenario.isFailed()) {
-			//scenario.embed(((TakesScreenshot) InitiateDriver.getInstance()).getScreenshotAs(OutputType.BYTES), "image/png");
-			
+			logger.info("Attaching screenshot for the failed step");
 			scenario.attach(((TakesScreenshot) InitiateDriver.getInstance()).getScreenshotAs(OutputType.BYTES), "image/png", null);
-			
+			logger.info("Attached screenshot");
 		}	
 	}
-	
-	
-	
-
 }

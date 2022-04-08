@@ -1,6 +1,8 @@
 package testrunner;
 
+import org.apache.log4j.Logger;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
@@ -18,11 +20,23 @@ import utils.InitiateDriver;
         )
 
 public class Runner extends AbstractTestNGCucumberTests{
+	Logger logger = null;
+	
+	public Runner()
+	{
+		logger = Logger.getLogger(Runner.class);
+	}
+	@BeforeClass
+	public void start()
+	{
+		logger.info("Starting the runner class");
+	}
 	
 	@AfterClass
 	public void quitDriver()
 	{
 		InitiateDriver.quitDriver();
+		logger.info("Runner finished");
 	}
 
 }

@@ -1,10 +1,24 @@
 package testngtests;
 
+import org.apache.log4j.Logger;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class TestngClass1 {
+	Logger logger = null;
+	
+	public TestngClass1()
+	{
+		logger = Logger.getLogger(TestngClass1.class);
+	}
+	
+	@BeforeClass
+	public void start() {
+		logger.info("Starting TestNG tests.");
+	}
 
 
 	@Test (priority = 2)
@@ -46,12 +60,14 @@ public class TestngClass1 {
 		System.out.println("THIS IS A TEST5 : " + value);
 	}
 
-
-
-
 	@DataProvider (name = "data-provider")
 	public Object[] dpMethod(){
 		return new Object[] {"First-Value", "Second-Value"};
+	}
+	
+	@AfterClass
+	public void end() {
+		logger.info("Finished TestNG tests.");
 	}
 
 }
