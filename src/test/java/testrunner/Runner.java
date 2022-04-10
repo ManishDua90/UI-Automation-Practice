@@ -11,6 +11,7 @@ import utils.InitiateDriver;
 @CucumberOptions(
         features = "/Users/mmt9178/eclipse-workspace/Personal/UIAutomation/UI-Automation-Practice/src/test/resources/features/",
         glue = {"stepdefinitions"},
+        //tags = "@OpenHomePage",
         plugin = {
                 "pretty","html:target/cucumber-reports/cucumber-pretty",
 //                "json:target/cucumber-reports/CucumberTestReport.json",
