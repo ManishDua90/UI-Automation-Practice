@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import io.cucumber.java.en.Then;
 import utils.InitiateDriver;
@@ -28,6 +29,7 @@ public class BuyCloth {
 		logger = Logger.getLogger(BuyCloth.class);
 	}
 
+	@Test(retryAnalyzer = utils.RetryAnalyzer.class)
 	@Then("Buy a {string}")
     public void buyCloth(String cloth) throws Exception{
 		logger.info("Buy cloth step started");
