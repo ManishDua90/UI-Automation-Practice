@@ -15,6 +15,7 @@ import utils.InitiateDriver;
         plugin = {
                 "pretty","html:target/cucumber-reports/cucumber-pretty",
 //                "json:target/cucumber-reports/CucumberTestReport.json",
+                "rerun:target/rerun.txt",
 //                "rerun:target/cucumber-reports/rerun.txt",
 //                "cucumberHooks.customReportListener",
         		"io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm" }, monochrome = true

@@ -5,6 +5,7 @@
 	<test name="Regression">
 		<classes>
 			<class name="testrunner.Runner" />
+			<class name="testrunner.FailedScenarios" />
 			<class name="testngtests.TestngClass1">
 			</class>
 				<parameter name="testparam" value="TEST PARAM" />

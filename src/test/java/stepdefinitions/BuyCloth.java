@@ -46,7 +46,7 @@ public class BuyCloth {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(PROCEED_TO_CHECKOUT_XPATH))));
         driver.findElement(By.xpath(PROCEED_TO_CHECKOUT_XPATH)).click();
         int quantity = Integer.parseInt(driver.findElement(By.xpath(QUANTITY_INPUT_XPATH)).getAttribute("value"));
-        Assert.assertEquals(quantity, 1);
+        Assert.assertEquals(quantity, 2);
         logger.info("Buy cloth step finished");
     }
 }
