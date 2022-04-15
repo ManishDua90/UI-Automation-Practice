@@ -1,6 +1,7 @@
 package utils;
 
 import java.io.BufferedReader;
+import static constants.Constants.*;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
@@ -11,7 +12,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class InitiateDriver {
 	private static WebDriver driver = null;
 	private static Properties properties;
-	private final static String propertyFilePath= "src/test/resources/configs/config.properties";
 	static BufferedReader reader;
 	
 	
@@ -24,7 +24,7 @@ public class InitiateDriver {
 		System.out.println("CalledTEST");
 		properties = new Properties();
 		try {
-			reader = new BufferedReader(new FileReader(propertyFilePath));
+			reader = new BufferedReader(new FileReader(PROPERTY_FILE_PATH));
 			properties.load(reader);
 			reader.close();
 		} catch (IOException e) {
